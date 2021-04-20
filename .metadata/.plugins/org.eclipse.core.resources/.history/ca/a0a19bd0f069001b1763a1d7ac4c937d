@@ -1,0 +1,68 @@
+package apptest.apptest;
+
+import java.net.URL;
+import java.util.concurrent.TimeUnit;
+
+import org.openqa.selenium.remote.DesiredCapabilities;
+import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Test;
+
+import io.appium.java_client.AppiumDriver;
+import io.appium.java_client.MobileElement;
+
+public class Rcmp_setting {
+	
+	protected AppiumDriver<MobileElement> driver;
+	
+	    @BeforeTest
+	    public void beforeTest()  {
+	
+	        try {
+	        	DesiredCapabilities cap = new DesiredCapabilities();
+	       
+	            cap.setCapability("appium-version", "1.19.1"); //UI Automator  사용하기 위함
+	            cap.setCapability("automationName", "uiautomator2"); //Android 8.0 이상 필수
+	            
+	        	cap.setCapability("deviceName", "LM-G820N");  //Phone model number
+	        	cap.setCapability("udid", "LMG820N7aa209c3");
+	        	cap.setCapability("platformName", "Android");
+	        	cap.setCapability("platformVersion", "10");
+	        	cap.setCapability("appPackage", "com.lge.launcher3");
+	        	cap.setCapability("appActivity", "com.rsupport.rs.activity");
+
+	        	/*driver = new AppiumDriver<MobileElement>(url, cap);
+	        	driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
+	        	driver.hideKeyboard();        
+	        	Thread.sleep(5000);*/
+
+	        	}catch(Exception exp) {
+	        		System.out.println("Cause is : "+exp.getCause());
+	        		System.out.println("Cause is : "+exp.getMessage());
+	        		exp.printStackTrace();
+	        	}
+	    }
+
+	  @Test
+	  public void sampleTest() {
+		  MobileElement el1 = (MobileElement) driver.findElementById("com.rsupport.rs.activity.rsupport:id/requestButton");
+		  el1.click();
+		  MobileElement el2 = (MobileElement) driver.findElementById("com.android.permissioncontroller:id/permission_allow_button");
+		  el2.click();
+		  MobileElement el3 = (MobileElement) driver.findElementById("com.android.permissioncontroller:id/permission_allow_button");
+		  el3.click();
+		  MobileElement el4 = (MobileElement) driver.findElementByAccessibilityId("메뉴");
+		  el4.click();
+		  MobileElement el5 = (MobileElement) driver.findElementByAccessibilityId("설정");
+		  el5.click();
+		  MobileElement el6 = (MobileElement) driver.findElementById("com.rsupport.rs.activity.rsupport:id/serverAddressInputText");
+		  el6.click();
+	      System.out.println("I am inside sample Test");
+	  }
+
+	  @AfterTest
+	  public void closeTest() {
+	      driver.closeApp();        
+	      driver.quit();
+	    }
+	}
