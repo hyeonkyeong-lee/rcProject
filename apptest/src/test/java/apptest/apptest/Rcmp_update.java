@@ -46,45 +46,40 @@ public class Rcmp_update {
 	    }
 
 	  @Test
-	  public void updateTest() {
+	  public void NoUpdate() {
 		  //업데이트 있을 경우 //업데이트 미실행
 		  MobileElement el1 = (MobileElement) driver.findElementById("com.rsupport.rs.activity.rsupport:id/negativeButton");
 		  el1.click();
-		  MobileElement el2 = (MobileElement) driver.findElementById("com.rsupport.rs.activity.rsupport:id/requestButton");
-		  el2.click();
-		  MobileElement el3 = (MobileElement) driver.findElementById("com.android.permissioncontroller:id/permission_allow_button");
-		  el3.click();
-		  el3.click();
-		  MobileElement el4 = (MobileElement) driver.findElementById("android:id/switch_widget");
-		  el4.click();
-		  MobileElement el5 = (MobileElement) driver.findElementByAccessibilityId("Navigate up");
-		  el5.click();
-		  MobileElement el6 = (MobileElement) driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.ScrollView/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/androidx.recyclerview.widget.RecyclerView/android.widget.LinearLayout[8]/android.widget.RelativeLayout");
-		  el6.click();
+		//MobileElement el2 = (MobileElement) driver.findElementById("com.rsupport.rs.activity.rsupport:id/requestButton");
+		 
 		  
-		  //앱 권한 획득 후
-		  /*MobileElement el7 = (MobileElement) driver.findElementByAccessibilityId("Menu");
-		  el7.click();
-		  MobileElement el8 = (MobileElement) driver.findElementByAccessibilityId("Settings");
-		  el8.click();
-		  MobileElement el9 = (MobileElement) driver.findElementById("com.rsupport.rs.activity.rsupport:id/serverAddressInputText");
-		  el9.clear();
-		  el9.sendKeys("stalpa.startsupport.com");
-		  MobileElement el10 = (MobileElement) driver.findElementById("com.rsupport.rs.activity.rsupport:id/saveButton");
-		  el10.click();
-		  MobileElement el11 = (MobileElement) driver.findElementByAccessibilityId("Menu");
-		  el11.click();
-		  MobileElement el12 = (MobileElement) driver.findElementByXPath("//android.widget.LinearLayout[@content-desc=\"About\"]/android.widget.TextView");
-		  el12.click();
-		  MobileElement el13 = (MobileElement) driver.findElementById("com.rsupport.rs.activity.rsupport:id/titleText");
-		  el13.click();
-		  MobileElement el14 = (MobileElement) driver.findElementByAccessibilityId("Back");
-		  el14.click();
-		  MobileElement el15 = (MobileElement) driver.findElementByAccessibilityId("Menu");
-		  el15.click();
-		  MobileElement el16 = (MobileElement) driver.findElementByXPath("//android.widget.LinearLayout[@content-desc=\"End mobile support\"]/android.widget.TextView");
-		  el16.click();*/
-	      }
+		 /* if (el2==null) {*/
+			  MobileElement el4 = (MobileElement) driver.findElementByAccessibilityId("Menu");
+			  el4.click();
+			  MobileElement el5 = (MobileElement) driver.findElementByXPath("//android.widget.LinearLayout[@content-desc=\"Settings\"]/android.widget.TextView");
+			  el5.click();
+			  MobileElement el6 = (MobileElement) driver.findElementById("com.rsupport.rs.activity.rsupport:id/serverAddressInputText");
+			  el6.clear();
+			  el6.sendKeys("stalpa.startsupport.com");
+			  MobileElement el7 = (MobileElement) driver.findElementById("com.rsupport.rs.activity.rsupport:id/saveButton");
+			  el7.click();
+	  }
+			  
+		/*  }else {
+			  el2.click();
+			  MobileElement el3 = (MobileElement) driver.findElementById("com.android.permissioncontroller:id/permission_allow_button");
+			  el3.click();
+			  el3.click();
+			  MobileElement el4 = (MobileElement) driver.findElementByAccessibilityId("Menu");
+			  el4.click();
+			  MobileElement el5 = (MobileElement) driver.findElementByXPath("//android.widget.LinearLayout[@content-desc=\"Settings\"]/android.widget.TextView");
+			  el5.click();
+			  MobileElement el6 = (MobileElement) driver.findElementById("com.rsupport.rs.activity.rsupport:id/serverAddressInputText");
+			  el6.clear();
+			  el6.sendKeys("stalpa.startsupport.com");
+			  MobileElement el7 = (MobileElement) driver.findElementById("com.rsupport.rs.activity.rsupport:id/saveButton");
+			  el7.click();
+		  }		  */
 
 	  @AfterTest
 	  public void closeTest() {       

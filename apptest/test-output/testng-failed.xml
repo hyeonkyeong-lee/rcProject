@@ -5,7 +5,7 @@
     <classes>
       <class name="apptest.apptest.Rcmp_update">
         <methods>
-          <include name="updateTest"/>
+          <include name="NoUpdate"/>
           <include name="beforeTest"/>
           <include name="closeTest"/>
         </methods>
